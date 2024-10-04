@@ -137,6 +137,7 @@ static struct ofw_compat_data compat_data[] = {
 	{ "allwinner,sun8i-h3-rtc", (uintptr_t) &h3_conf },
 	{ "allwinner,sun50i-h5-rtc", (uintptr_t) &h3_conf },
 	{ "allwinner,sun50i-h6-rtc", (uintptr_t) &h3_conf },
+	{ "allwinner,sun20i-d1-rtc", (uintptr_t) &h3_conf },
 	{ NULL, 0 }
 };
 
@@ -334,9 +335,9 @@ aw_rtc_settime(device_t dev, struct timespec *ts)
 	RTC_WRITE(sc, sc->conf->rtc_time, 0);
 
 	rdate = SET_DAY_VALUE(ct.day) | SET_MON_VALUE(ct.mon) |
-		SET_YEAR_VALUE(ct.year - YEAR_OFFSET) | 
+		SET_YEAR_VALUE(ct.year - YEAR_OFFSET) |
 		SET_LEAP_VALUE(IS_LEAP_YEAR(ct.year));
-			
+
 	rtime = SET_SEC_VALUE(ct.sec) | SET_MIN_VALUE(ct.min) |
 		SET_HOUR_VALUE(ct.hour);
 

@@ -1,2 +1,12 @@
-
-arm/allwinner/aw_wdog.c			optional	aw_wdog
+arm/allwinner/aw_wdog.c					optional	aw_wdog
+arm/allwinner/aw_rtc.c					optional	aw_rtc fdt
+arm/allwinner/clkng/aw_ccung.c			optional	aw_ccu fdt
+arm/allwinner/clkng/aw_clk_frac.c		optional 	aw_ccu fdt
+arm/allwinner/clkng/aw_clk_m.c			optional 	aw_ccu fdt
+arm/allwinner/clkng/aw_clk_mipi.c		optional 	aw_ccu fdt
+arm/allwinner/clkng/aw_clk_nkmp.c		optional 	aw_ccu fdt
+arm/allwinner/clkng/aw_clk_nm.c			optional 	aw_ccu fdt
+arm/allwinner/clkng/aw_clk_nmm.c		optional 	aw_ccu fdt
+arm/allwinner/clkng/aw_clk_np.c			optional 	aw_ccu fdt
+arm/allwinner/clkng/aw_clk_prediv_mux.c	optional 	aw_ccu fdt
+riscv/allwinner/ccu_d1.c				optional	aw_ccu fdt

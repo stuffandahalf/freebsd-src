@@ -76,6 +76,7 @@ options 	RACCT_DEFAULT_TO_DISABLED # Set kern.racct.enable=0 by default
 options 	RCTL			# Resource limits
 options 	SMP
 
+
 # RISC-V SBI console
 device		rcons
 
@@ -135,6 +136,7 @@ device		hid		# Generic HID support
 device		uart		# Generic UART driver
 device		uart_lowrisc	# lowRISC UART driver
 device		uart_ns8250	# ns8250-type UART driver
+device		uart_snps	# snps UART driver
 
 # Console
 device		vt
@@ -175,6 +177,7 @@ device		da9063_pmic	# Dialog Semiconductor DA9063 PMIC
 # Debugging support.  Always need this:
 options 	KDB			# Enable kernel debugger support.
 options 	KDB_TRACE		# Print a stack trace for a panic.
+options		EARLY_PRINTF=sbi
 
 # Kernel dump features.
 options 	ZSTDIO			# zstd-compressed kernel and user dumps
@@ -204,6 +207,8 @@ device		iicoc		# OpenCores I2C controller support
 
 # Allwinner device drivers
 device		aw_wdog		# Allwinner Watchdog
+device		aw_ccu		# Allwinner clock controller
+device		aw_rtc		# Allwinner real-time clock
 files		"../allwinner/files.allwinner"
 
 # SiFive device drivers
